@@ -295,8 +295,9 @@ button {
 	margin: 0;
 }
 /*grid blockquote specifically used in COB*/
-.workgrid > blockquote {
+.workgrid iframe {
 	width:30% !important;
+	min-width: 0 !important;
 }
 .flex-block{
 	display: flex;
@@ -511,7 +512,8 @@ top: 0;
 											    bottom: 80px;
 											}
 											/*grid blockquote specifically used in COB*/
-											.workgrid > blockquote {
+											.workgrid iframe {
 												width:100% !important;
+												min-width: 0 !important;
 											}
 										}
