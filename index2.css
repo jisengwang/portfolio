@@ -154,7 +154,9 @@ button {
     z-index: 100;
     background-color: black;
 }
-
+.footer h6::after{
+	content: 'Contents of this website are Copyright © 2020-2024 Eldrin Banares. All rights reserved.   /   Designed and coded with ❤ by Eldrin B.';
+}
 .footer h6{
     margin:0;
 }
