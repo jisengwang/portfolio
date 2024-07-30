@@ -1,3 +1,18 @@
+/**/
+/* Global Assets Legend */
+/**/
+
+/*
+
+/* CSS HEX */
+/*
+--Pear Green: #CCEE1D;
+--RED: #FF0000;
+--Navy-Blue: #0d0099;
+--Night: #0A0A0A;
+*/
+
+
 html {
 	scroll-behavior: smooth;
 	transition: 0.5s;
@@ -8,9 +23,9 @@ body {
 	font-style: normal;
 	font-weight: 400;
 	font-size: 1.3vw;
-	color: rgb(255,255,255);
+	color: #cced1d;
 
-	background-color: black;
+	background-color: #0d0099;
 	margin:0;
 	transition: 0.3s;
 }
@@ -24,7 +39,7 @@ h1, h2, h3, h4, h5{
 	font-style: normal;
 	font-weight: 700;
 
-	color: rgb(255,255,0);
+	color: #cced1d;
 }
 
 h6 {
@@ -32,17 +47,17 @@ h6 {
 	font-style: normal;
 	font-weight: 400;
 
-	color: rgb(255,255,0);
+	color: #FF0000;
 }
 
 a {
-	/*text-decoration: none;*/
-	color: white;
+	text-decoration: none;
+	color: #CCEE1D;
 
 	font-style: italic;
 }
 a:hover {
-	color: rgb(200,200,200); 
+	color: #FF0000; 
 
 	font-style: italic;
 }
@@ -69,7 +84,7 @@ button {
 /*-------------------------------universal assets-----------------------------------*/
 .border{
 	border-style: solid;
-	border-color: rgb(255,255,0);
+	border-color: #CCEE1D;
 	border-width: 1px;
 
 /*	padding: 25px;*/
@@ -77,19 +92,19 @@ button {
 .bar{
 	height:1px;
 	width: 100%;
-	background-color: rgb(255,255,0);
+	background-color: #CCEE1D;
 
 	margin-top: 50px;
 	margin-bottom: 50px;
 }
 /*border for images with dark background*/
 #dark{
-	border: rgb(255,255,0) solid 1px;
-	/*box-shadow:inset 0px 0px 0px 1px rgb(255,255,0);*/
+	border: #CCEE1D solid 1px;
+	/*box-shadow:inset 0px 0px 0px 1px #CCEE1D;*/
 }
 /*border for text blocks*/
 #dark-text-block{
-	border: rgb(255,255,0) solid 1px;
+	border: #CCEE1D solid 1px;
 	margin-bottom: 25px;
 	padding: 10px;
 }
@@ -112,11 +127,58 @@ button {
 .drop-down-container{
 	width: 100%;
 }
+/*-------------------------------dropdown (new, jan 16, 2024)-----------------------------------*/
+details.dropdown {
+/*padding: 0 0 20px;*/
+/*margin-top: 5%;*//*30px;*/
+position: relative;
+/*border-bottom: 1px solid #4C4A4d;*/
+}
+details.dropdown > summary {
+padding: 3% 0;
+cursor: pointer;
+}
+details.dropdown > summary::after {
+    content: "+";
+    float: right;
+}
+details.dropdown[open] > summary::after {
+    content: "×";
+    float: right;
+}
+summary:focus {
+outline: none;
+}
+.me{
+	margin: 1em 0;
+}
+
 /*-------------------------------body grid-----------------------------------*/
 .body-flex{
 	display: inline-flex;
 	flex-direction: wrap;
 	max-width: 100%;
+    padding: 2em 20%;
+    column-gap: 2em;
+}
+.body-flex.firstfold {
+    padding: 0;
+    column-gap: 0;
+    padding-top:70px;
+}
+.body-flex.firstfold > #about{
+	padding: 0em;
+}
+.body-flex.firstfold > #about > div{
+	padding: 2em;
+}
+.body-flex.firstfold > #work{
+	max-width: 50%;
+}
+.body-flex.firstfold > #work > img{
+	width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 /*-------------------------------header / footer-----------------------------------*/
 #header{
@@ -129,52 +191,59 @@ button {
   	padding-left: 20px;
   	height: 70px;
 
-  	background-color: black;
+  	background-color: #0d0099;
 
   	display: flex;
     justify-content: flex-start;
     align-items: center;
 }
-
+#header svg{
+	stroke: #CCEE1D;
+}
 #header a {
 	text-decoration: none;
-	color: rgb(255,255,0) !important;
+	color: #CCEE1D;
 
 	font-style: normal;
 }
-#header a:hover {
-	color: rgb(200,200,0) !important; 
+#header:hover a{
+	color: #FF0000; 
 
 	font-style: normal;
+}
+#header:hover svg{
+	stroke: #FF0000;
 }
 
 .footer{
 	height: 100%;
-    padding: 2em 20px;
+    padding: 2em;
     z-index: 100;
-    background-color: black;
+/*    background-color: black;*/
 }
 .footer h6::after{
 	content: 'Contents of this website are Copyright © 2020-2024 Eldrin Banares. All rights reserved.   /   Designed and coded with ❤ by Eldrin B.';
 }
+
 .footer h6{
     margin:0;
 }
 
 .back2top{
 	position: fixed;
-	right:30px;
-	bottom:30px;
+	right:2em;
+	bottom:2em;
 	z-index: 999;
 
 	width:40px;
 	height:40px;
 	
 	border-style: solid;
-	border-color: rgb(255,255,0);
+	border-color: #CCEE1D;
 	border-width: 1px;
-	background-color:black;
+	background-color: #0d0099;
 }
+
 .back2top-outline{
 	position: relative;
     top:10px;
@@ -184,10 +253,16 @@ button {
 	z-index: 999;
 	border-left: 10px solid transparent;
 	border-right: 10px solid transparent;
-	border-bottom: 20px solid rgb(255,255,0);
+	border-bottom: 20px solid #CCEE1D;
+}
+.back2top:hover{
+	border-color: #FF0000;
+}
+.back2top:hover .back2top-outline{
+	border-bottom: 20px solid #FF0000;
 }
 
-.back2top-outline:hover{
+/*.back2top-outline:hover{
 	position: relative;
     top:10px;
 	left:10px;
@@ -195,8 +270,8 @@ button {
 	height:0px;
 	border-left: 10px solid transparent;
 	border-right: 10px solid transparent;
-	border-bottom: 20px solid rgb(200,200,0);
-}
+	border-bottom: 20px solid #FF0000;
+}*/
 
 
 /*-------------------------------landing / title-----------------------------------*/
@@ -204,7 +279,7 @@ button {
 	font-size:1.75em;
 	/*line-height: 2.5em;*/
 	margin-bottom: 0;
-	color: rgb(255,255,0);
+/*	color: #FF0000;*/
 }
 /*.title h1, .title h2, .title h3, .title h4, .title h5{
 	color: black;
@@ -212,41 +287,31 @@ button {
 .title-sub{
 	font-style: italic;
 	margin-top: 0;
-	color:rgb(255,255,0);
+	color:#CCEE1D;
 }
 /*-------------------------------about-----------------------------------*/
 #about{
-	top: 0;
+	top: 20px;
     position: sticky;
     position: -webkit-sticky;
 
 	order: 1;
-    max-width: 33%;
+    max-width: 50%;
     display: inline-flex;
     flex-direction: column;
     align-self: flex-start;
-	padding-top: 100px;
-
-	/*color: black;*/
+/*	padding-top: 100px;*/
 }
-#about > div{
+/*#about > div{
 	padding: 0 20px;
-}
-
-#about svg {
-	/*stroke:#000000 !important;*/
-}
+}*/
 
 #about a {
 	font-style: initial; 
 }
-#about a:hover {
+/*#about a:hover {
 	opacity: 0.8;
-}
-
-.me{
-	margin-top: 1em;
-}
+}*/
 .contact{
 	display: flex;
     align-items: center;
@@ -254,7 +319,6 @@ button {
 	padding-left: 10px;
 }
 .contact-inline{
-	/*width: 80%;*/
 	column-gap: 2vw;
 }
 .contact-inline-details{
@@ -266,15 +330,17 @@ button {
 /*-------------------------------work-----------------------------------*/
 #work{
 	order: 2;
-	max-width:67%;
-	padding: 100px 20px 0 20px;
-	background-color: black;
+	max-width:100%;
+/*	padding: 100px 20px 0 20px;*/
+	/*	background-color: black;*/
+	background-color: #0d0099;
 }
 .workgrid{
 	width: 100%;
     display: inline-flex;
     align-content: flex-start;
-    grid-gap: 1vw;
+    justify-content: space-between;
+    grid-gap: 2em;
     flex-direction: row;
     flex-wrap: wrap;
 }
@@ -286,9 +352,10 @@ button {
 }
 #work-feature{
 	order: 2;
-	max-width:67%;
-	padding: 100px 20px 0 20px;
-	background-color: black;
+	max-width:100%;
+/*	padding: 100px 20px 0 20px;*/
+	/*	background-color: black;*/
+	background-color: #0d0099;
 }
 #work-feature img{
 	margin-bottom: 25px;
@@ -308,7 +375,7 @@ button {
 /* Main container */
 .overlay-image {
  position: relative;
- max-width: 32%;
+ max-width: 30%;
 }
 
 /* Original image */
@@ -328,39 +395,50 @@ height: auto;
 	text-overflow: clip;
 
 	border-style: solid;
-	border-color: rgb(255,255,0);
+	border-color: #CCEE1D;
 	border-width: 1px;
 
 	text-align: center;
-	width: 100%;
+	min-width: 30%;
+	max-width: initial;
 }
 /* Original text overlay */
 .overlay-image .imgtxt{
-	color: black;
- text-align: center;
+/*	color: #4C4A4d;*/
+ /*text-align: center;
  position: absolute;
  top: 50%;
  left: 50%;
- transform: translate(-50%, -50%);
+ transform: translate(-50%, -50%);*/
+ text-align: left;
  width: 100%;
  font-size:1.2vw;
 }
-.overlay-image h2{
-	color: black !important;
+.overlay-image .imgtxt > h3{
+	margin-bottom:0;
+}
+.overlay-image .imgtxt > p{
+	margin-top:0;
+}
+.overlay-image > a:hover h3{
+color: #FF0000;
+}
+.overlay-image > a:hover .gridimg{
+opacity: 0.8;
 }
 /* New overlay on hover */
-.overlay-image .hover {
+/*.overlay-image .hover {
  position: absolute;
  top: 0;
  height: 100%;
  width: 100%;
  opacity: 0;
  transition: .2s ease;
-}
+}*/
 /* New overlay appearance on hover */
-.overlay-image:hover .hover {
+/*.overlay-image:hover .hover {
  opacity: 1;
-}
+}*/
 /********* Background and text only overlay on hover *******/
 .overlay-image .normal {
  transition: .2s ease;
@@ -368,9 +446,9 @@ height: auto;
 .overlay-image:hover .normal {
  opacity: 0;
 }
-.overlay-image .hover {
- background-color: rgb(255,255,0);
-}
+/*.overlay-image .hover {
+ background-color: #CCEE1D;
+}*/
 /*_______________________________________slideshow gallery_______________________________________*/
 /** {box-sizing:border-box}*/
 
@@ -455,7 +533,7 @@ top: 0;
 						font-size: initial;
 					}
 					.overlay-image {
-						 max-width: 48%;
+						 max-width: 46%;
 					}
 					.overlay-image .imgtxt{
 						font-size: 1.5vw;
@@ -471,6 +549,14 @@ top: 0;
 											.body-flex{
 												display: inline-flex;
 												flex-direction: column;
+												padding: 2em;
+												max-width: 100%;
+											}
+											.body-flex.firstfold > #about{
+												order: 2;
+											}
+											.body-flex.firstfold > #work{
+												order: 1;
 												max-width: 100%;
 											}
 											#about{
@@ -485,17 +571,22 @@ top: 0;
 												padding-top: 100px;
 												padding-bottom: 20px;
 
-												border-bottom: rgb(255,255,0) solid 1px;
+												border-bottom: #CCEE1D solid 1px;
 											}
 											#work{
 												order: 2;
 												max-width:100vw;
-												padding: 50px 20px 0 20px;
+/*												padding: 50px 20px 0 20px;*/
+											}
+											.workgrid{
+												column-gap: 1em;
+    											row-gap: 2em;
+    											justify-content: space-between;
 											}
 											#work-feature{
 												order: 2;
-												max-width:100vw;
-												padding: 50px 20px 0 20px;
+												max-width:100%;
+/*												padding: 50px 20px 0 20px;*/
 											}
 											#work-feature img{
 												margin-bottom: 25px;
@@ -504,7 +595,7 @@ top: 0;
 												height: 200px;
 											}
 											.overlay-image {
-												 max-width: 48%;
+												 max-width: 46%;
 											}
 											.overlay-image .imgtxt{
 												font-size: 2vw;
